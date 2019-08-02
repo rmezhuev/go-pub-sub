@@ -1,5 +1,25 @@
 # Go Demo Project
 
+#PubSub
+
+- Add required env vars to file
+```bash
+GOOGLE_APPLICATION_CREDENTIALS=/full/path/to/Project-237cfc2105d6.json
+GOOGLE_CLOUD_PROJECT=api-project-62990225216
+SERVICE_NAME=usecase-service
+```
+- Topic should be created manually on Google Pub/Sub
+
+- Publish dummy message to topic
+```bash
+bin/console publish [topic] [routing-key]   
+```
+- Run consumer
+```bash
+bin/console subscriber [topic]  
+```
+ it will automatically create subscriber if not exists `service_master_topic`
+
 ## Features
 
 - Does not require to be inside `GOPATH`
